@@ -1,31 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>AI Chatbox Login</title>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-		/>
-		<link rel="stylesheet" href="src/scss/layout/_auth.css" />
-	</head>
-	<body class="auth-container">
-		<div class="_container">
-			<h1>Login to AI Chatbox</h1>
-			<div class="form-group">
-				<button class="btn" id="btnGoogle" type="button">
-					<span
-						class="fa fa-google"
-						style="margin-right: 10px"
-					></span>
-					Login with Google
-				</button>
-			</div>
-			<div class="footer">© 2024 DarkLion Team</div>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>AI Chatbox Login</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #272a30;
+			font-family: "Arial", sans-serif;
+			margin: 0;
+			color: #ffffff;
+		}
+
+		.container {
+			text-align: center;
+			background-color: #202229;
+			padding: 60px;
+			border-radius: 10px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+			width: 450px;
+		}
+
+		h1 {
+			margin-bottom: 20px;
+			font-size: 24px;
+			color: #ffffff;
+		}
+
+		.form-group {
+			margin-top: 20px;
+		}
+
+		.btn {
+			background: linear-gradient(90deg, #4e54c8, #8f94fb);
+			color: white;
+			border: none;
+			padding: 12px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 5px;
+			transition: background 0.3s, transform 0.3s;
+		}
+
+		.btn:hover {
+			transform: translateY(-2px);
+		}
+
+		.btn:active {
+			transform: translateY(0);
+		}
+
+		.footer {
+			margin-top: 20px;
+			font-size: 14px;
+			color: #aaaaaa;
+		}
+
+		.popup {
+			display: none;
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			background-color: #4caf50;
+			color: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+			z-index: 1000;
+			animation: fadeIn 0.5s, fadeOut 0.5s 1.5s forwards;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity: 1;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		// Kiểm tra nếu đã có accessToken trong localStorage
+		if (localStorage.getItem("accessToken")) {
+			window.location.href = "./chat.html"; // Chuyển hướng đến chat.html
+		}
+	</script>
+
+	<div class="container">
+		<h1>Login to AI Chatbox</h1>
+		<div class="form-group">
+			<button class="btn" id="btnGoogle" type="button">
+				<span class="fa fa-google"></span> Login with Google
+			</button>
 		</div>
-		<div class="popup" id="successPopup">Login successful!</div>
-	</body>
-	<script src="src/js/auth.js" type="module"></script>
+		<div class="footer">© 2024 DarkLion Team.</div>
+	</div>
+
+	<div class="popup" id="successPopup">Login successful!</div>
+
+	<script type="module">
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+		import {
+			getAuth,
+			GoogleAuthProvider,
+			signInWithPopup,
+		} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+		const firebaseConfig = {
+			apiKey: "AIzaSyCgCzZQkejjqADT_2gJhPXQ9RDsWOsj4Y4",
+			authDomain: "zero-api-a307a.firebaseapp.com",
+			databaseURL:
+				"https://zero-api-a307a-default-rtdb.asia-southeast1.firebasedatabase.app",
+			projectId: "zero-api-a307a",
+			storageBucket: "zero-api-a307a.appspot.com",
+			messagingSenderId: "332366664231",
+			appId: "1:332366664231:web:6e2018d35d1595b55cf402",
+			measurementId: "G-22Z3HN0S4Q",
+		};
+
+		const app = initializeApp(firebaseConfig);
+		const auth = getAuth(app);
+		const provider = new GoogleAuthProvider();
+
+		document
+			.getElementById("btnGoogle")
+			.addEventListener("click", () => {
+				signInWithPopup(auth, provider)
+					.then((result) => {
+						const user = result.user;
+						localStorage.setItem(
+							"accessToken",
+							user.accessToken
+						);
+
+						const popup =
+							document.getElementById("successPopup");
+						popup.style.display = "block";
+
+						setTimeout(() => {
+							window.location.href = "./chat.html"; // Chuyển hướng đến chat.html
+						}, 1500);
+					})
+					.catch((error) => {
+						console.error("Error during login:", error);
+					});
+			});
+	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
 </html>

@@ -18,6 +18,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai@latest/dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai@latest/dist/index.umd.js"></script>
     <style>
         .material-symbols-outlined {
             font-variation-settings:
@@ -29,8 +30,11 @@
     </style>
     <!-- <script src="server.js"></script> -->
     <!-- <script type="importmap">
+    <!-- <script type="importmap">
         {
             "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai",
+                "./getApiKey.js": "./getApiKey.js"
                 "@google/generative-ai": "https://esm.run/@google/generative-ai",
                 "./getApiKey.js": "./getApiKey.js"
             }
@@ -47,9 +51,20 @@
             const model = genAI.getGenerativeModel({ model: "gemini-pro" });
             // Use the model as needed
         }
+    
+   <script type="module">
+        import { getApiKey } from './getApiKey.js';
+
+        async function initializeGenerativeAI() {
+            const API_KEY = await getApiKey();
+            const { GoogleGenerativeAI } = window.GoogleGenerativeAI;
+            const genAI = new GoogleGenerativeAI(API_KEY);
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            // Use the model as needed
+        }
 
         initializeGenerativeAI();
-    </script> -->
+    </script>  -->
     <script type="module" src="script.js" defer></script>
     <!-- <script type="module" src="copyFunction.js" ></script> -->
 

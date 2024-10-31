@@ -9,59 +9,96 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 		/>
 		<style>
+			/* General Styles */
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 			body {
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				height: 100vh;
-				background-color: #272a30;
-				font-family: "Arial", sans-serif;
 				margin: 0;
-				color: #ffffff;
+				background: radial-gradient(circle, #2C2F33, #1E1E28);
+				font-family: "Poppins", sans-serif;
+				overflow: hidden;
+				color: #FFFFFF;
 			}
 			.container {
 				text-align: center;
-				background-color: #202229;
+				background: rgba(30, 30, 40, 0.85);
 				padding: 60px;
-				border-radius: 10px;
-				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-				width: 450px;
+				border-radius: 20px;
+				box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+				width: 400px;
+				position: relative;
+				overflow: hidden;
+				transition: transform 0.5s, box-shadow 0.5s;
+			}
+			.container:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 20px 40px rgba(142, 146, 255, 0.7);
 			}
 			h1 {
 				margin-bottom: 20px;
-				font-size: 24px;
-				color: #ffffff;
+				font-size: 32px;
+				font-weight: 600;
+				background: linear-gradient(90deg, #8F94FB, #4E54C8);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				letter-spacing: 1.5px;
 			}
 			.form-group {
-				margin-top: 20px;
+				margin-top: 30px;
 			}
 			.btn {
-				background: linear-gradient(90deg, #4e54c8, #8f94fb);
+				background: linear-gradient(90deg, #4E54C8, #8F94FB);
 				color: white;
 				border: none;
-				padding: 12px 20px;
-				font-size: 16px;
+				padding: 15px 30px;
+				font-size: 18px;
+				font-weight: 600;
 				cursor: pointer;
-				border-radius: 5px;
-				transition: background 0.3s, transform 0.3s;
+				border-radius: 30px;
+				transition: all 0.4s ease;
+				position: relative;
+				overflow: hidden;
+			}
+			.btn::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 300%;
+				height: 100%;
+				background: rgba(255, 255, 255, 0.2);
+				transform: skewX(-45deg);
+				transition: left 0.5s;
+			}
+			.btn:hover::before {
+				left: 100%;
 			}
 			.btn:hover {
-				transform: translateY(-2px);
-			}
-			.btn:active {
-				transform: translateY(0);
+				transform: translateY(-3px);
+				box-shadow: 0 10px 25px rgba(142, 146, 255, 0.5);
 			}
 			.footer {
-				margin-top: 20px;
+				margin-top: 30px;
 				font-size: 14px;
-				color: #aaaaaa;
+				color: #BBBBBB;
+				letter-spacing: 1px;
+				opacity: 0.9;
+				text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+			}
+			/* Glow Effect on Button */
+			.btn:active {
+				box-shadow: 0 0 15px #8F94FB, 0 0 30px #4E54C8;
+				transform: translateY(0);
 			}
 			.popup {
 				display: none;
 				position: fixed;
 				top: 20px;
 				right: 20px;
-				background-color: #4caf50;
+				background: linear-gradient(135deg, #4CAF50, #81C784);
 				color: white;
 				padding: 20px;
 				border-radius: 10px;
@@ -89,24 +126,22 @@
 	</head>
 	<body>
 		<script>
-			// Kiểm tra nếu đã có accessToken trong localStorage
+			// Check if accessToken exists in localStorage
 			if (localStorage.getItem("accessToken")) {
-				window.location.href = "./chat.html"; // Chuyển hướng đến chat.html
+				window.location.href = "./chat.html";
 			}
 		</script>
-
 		<div class="container">
 			<h1>Login to AI Chatbox</h1>
 			<div class="form-group">
 				<button class="btn" id="btnGoogle" type="button">
-					<span class="fa fa-google"></span> Login with Google
+					<span class="fa fa-google" style="margin-right: 10px;"></span>
+					Login with Google
 				</button>
 			</div>
-			<div class="footer">© 2024 DarkLion Team.</div>
+			<div class="footer">© 2024 DarkLion Team</div>
 		</div>
-
 		<div class="popup" id="successPopup">Login successful!</div>
-
 		<script type="module">
 			import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 			import {
@@ -114,7 +149,6 @@
 				GoogleAuthProvider,
 				signInWithPopup,
 			} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-
 			const firebaseConfig = {
 				apiKey: "AIzaSyCgCzZQkejjqADT_2gJhPXQ9RDsWOsj4Y4",
 				authDomain: "zero-api-a307a.firebaseapp.com",
@@ -126,35 +160,24 @@
 				appId: "1:332366664231:web:6e2018d35d1595b55cf402",
 				measurementId: "G-22Z3HN0S4Q",
 			};
-
 			const app = initializeApp(firebaseConfig);
 			const auth = getAuth(app);
 			const provider = new GoogleAuthProvider();
-
-			document
-				.getElementById("btnGoogle")
-				.addEventListener("click", () => {
-					signInWithPopup(auth, provider)
-						.then((result) => {
-							const user = result.user;
-							localStorage.setItem(
-								"accessToken",
-								user.accessToken
-							);
-
-							const popup =
-								document.getElementById("successPopup");
-							popup.style.display = "block";
-
-							setTimeout(() => {
-								window.location.href = "./chat.html"; // Chuyển hướng đến chat.html
-							}, 1500);
-						})
-						.catch((error) => {
-							console.error("Error during login:", error);
-						});
-				});
+			document.getElementById("btnGoogle").addEventListener("click", () => {
+				signInWithPopup(auth, provider)
+					.then((result) => {
+						const user = result.user;
+						localStorage.setItem("accessToken", user.accessToken);
+						const popup = document.getElementById("successPopup");
+						popup.style.display = "block";
+						setTimeout(() => {
+							window.location.href = "./chat.html";
+						}, 1500);
+					})
+					.catch((error) => {
+						console.error("Error during login:", error);
+					});
+			});
 		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</body>
 </html>

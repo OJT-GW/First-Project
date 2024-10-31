@@ -1,6 +1,7 @@
 import { handleOutgoingChat } from './handleOutgoingChat.js';
 import { loadDataFromLocalStorage } from './loadDataFromLocalStorage.js';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+// import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI} from'https://esm.run/@google/generative-ai';
 import { showTypingAnimation } from './showTypingAnimation.js';
 // const openSidebarButton = document.getElementById("open-sidebar");
 // const sidebar = document.querySelector(".sidebar");

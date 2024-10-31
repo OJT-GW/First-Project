@@ -1,9 +1,125 @@
 <!DOCTYPE html>
+<!-- Coding By Adnan | https://www.linkedin.com/in/adnanhaider21421525/ -->
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>DarkLion AI Chat</title>
-	</head>
-	<body></body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkLion</title>
+    <link rel="stylesheet" href="stylechat.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" /> -->
+    <link href="prism.css" rel="stylesheet" />
+
+
+
+
+    <!-- Google Fonts Link For Icons -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+    <!-- <script src="server.js"></script> -->
+    <script type="importmap">
+        {
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+    </script>
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        // Fetch your API_KEY
+        const API_KEY = "AIzaSyCRs5tf4vtFmOleGU0cpluAHIsiHCwpHuw";
+
+        // Access your API key (see "Set up your API key" above)
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+    </script>
+    <script type="module" src="script.js" defer></script>
+    <!-- <script type="module" src="copyFunction.js" ></script> -->
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img class="header-logo" src="./src/images/dark-lion-high-resolution-logo-grayscale-transparent.png"
+                alt="Logo" />
+        </div>
+
+        <div class="new-chat">
+            <button id="new-chat-btn" class="material-symbols-outlined">add</button>
+            <span>New Chat</span>
+        </div>
+
+        <div class="chat-history">
+            <div class="chats">
+                <div class="chat-contents">
+                    <div class="chat-preview">
+                        <span class="chat-message">Hello, how can I help you?</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chats">
+                <div class="chat-contents">
+                    <div class="chat-preview">
+                        <span class="chat-message">I love my cat so much</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Character limit script for chat preview messages -->
+            <script>
+                const characterLimit = 15;
+
+                document.querySelectorAll('.chat-message').forEach(message => {
+                    if (message.textContent.length > characterLimit) {
+                        message.textContent = message.textContent.substring(0, characterLimit) + '...';
+                    }
+                });
+            </script>
+        </div>
+        <div class="button-container">
+            <button class="logout">
+                <span class="material-symbols-outlined">logout</span>
+            </button>
+            <button class="profile">
+                <span class="material-symbols-outlined">account_circle</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Container-->
+    <!-- index.html -->
+    <div id="chat-container" class="chat-container"></div>
+
+    <!-- Typing Container -->
+    <div class="typing-container">
+        <div class="typing-content">
+            <div class="typing-textarea">
+                <textarea id="chat-input" placeholder="Enter a prompt here" required></textarea>
+                <span id="send-btn" class="material-symbols-outlined">send</span>
+            </div>
+            <div class="typing-controls">
+                <span id="voice-btn" class="material-symbols-outlined">mic</span>
+                <span id="theme-btn" class="material-symbols-outlined">light_mode</span>
+                <span id="delete-btn" class="material-symbols-outlined">delete</span>
+            </div>
+        </div>
+    </div>
+
+    <span id="open-sidebar" class="material-symbols-outlined">menu</span>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="prism.js"></script>
+</body>
+
 </html>

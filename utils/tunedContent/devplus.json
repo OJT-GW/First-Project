@@ -1,0 +1,342 @@
+{
+  "data": [
+    {
+      "role": "user",
+      "parts": [{ "text": "hi\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [{ "text": "Hi! How can I help you today? \n" }]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "DevPlus là gì?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "DevPlus là một nền tảng giáo dục trực tuyến chuyên cung cấp khóa học về lập trình và phát triển ứng dụng.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Ai là đối tượng học viên của DevPlus?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "DevPlus phù hợp cho mọi đối tượng, từ người mới bắt đầu đến lập trình viên có kinh nghiệm muốn nâng cao kỹ năng.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Các khóa học tại DevPlus có miễn phí không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "DevPlus cung cấp cả khóa học miễn phí và có phí. Học viên có thể chọn khóa học phù hợp với ngân sách của mình.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "DevPlus có chứng chỉ không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, học viên sẽ nhận được chứng chỉ hoàn thành sau khi kết thúc khóa học.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Có bao nhiêu khóa học trên DevPlus?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "DevPlus cung cấp hàng chục khóa học khác nhau về nhiều lĩnh vực lập trình và công nghệ.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Khóa học nào là phổ biến nhất trên DevPlus?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Các khóa học về JavaScript, Python và phát triển web thường rất được ưa chuộng.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "DevPlus có hỗ trợ học viên không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, DevPlus có cộng đồng hỗ trợ và diễn đàn nơi học viên có thể đặt câu hỏi và nhận trợ giúp.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Thời gian hoàn thành một khóa học là bao lâu?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Thời gian hoàn thành tùy thuộc vào khóa học, nhưng thường từ vài tuần đến vài tháng.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "DevPlus có chương trình học trực tuyến không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, tất cả các khóa học đều được tổ chức trực tuyến, cho phép học viên học bất cứ lúc nào.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "DevPlus có các bài kiểm tra đánh giá không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, nhiều khóa học có bài kiểm tra để đánh giá sự tiến bộ của học viên.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "DevPlus có cung cấp tài liệu học tập không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, mỗi khóa học đi kèm với tài liệu học tập, video, và bài tập thực hành.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "DevPlus có tính năng học nhóm không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, học viên có thể tham gia vào các nhóm học để thảo luận và làm việc cùng nhau.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Làm thế nào để đăng ký khóa học trên DevPlus?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Học viên chỉ cần tạo tài khoản trên trang web và chọn khóa học để đăng ký.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Có chính sách hoàn tiền không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, DevPlus có chính sách hoàn tiền trong một khoảng thời gian nhất định nếu học viên không hài lòng với khóa học.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "DevPlus có hỗ trợ học viên quốc tế không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, DevPlus hỗ trợ học viên từ nhiều quốc gia với nội dung học bằng tiếng Việt và tiếng Anh.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "DevPlus có thể học trên thiết bị di động không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, nền tảng của DevPlus được tối ưu hóa cho cả máy tính và thiết bị di động.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Ai là giảng viên của các khóa học?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Giảng viên là những chuyên gia có kinh nghiệm trong lĩnh vực công nghệ và lập trình.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Có thể tìm kiếm khóa học theo chủ đề không?\n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, DevPlus cho phép tìm kiếm khóa học theo chủ đề, mức độ khó, và thời gian học.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "DevPlus có tổ chức các sự kiện hay hội thảo không?\n"
+        }
+      ]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Có, DevPlus thường tổ chức các buổi hội thảo và sự kiện trực tuyến để nâng cao kiến thức cho học viên.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "Làm thế nào để liên hệ với DevPlus khi cần hỗ trợ?\n"
+        }
+      ]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Học viên có thể liên hệ qua email hoặc trang hỗ trợ trên website của DevPlus.\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Bạn biết chúng tôi chứ? \n" }]
+    },
+    {
+      "role": "model",
+      "parts": [
+        { "text": "Các bạn là team DarkLion và cũng là người tạo ra tôi \n" }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [{ "text": "Nhóm chúng tôi gồm bao nhiêu người? \n" }]
+    },
+    {
+      "role": "model",
+      "parts": [{ "text": "Nhóm các bạn gồm 7 thành viên \n" }]
+    },
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "Nhóm chúng tôi gồm 7 người vậy thì bạn hãy liệt kê cụ thể tên từng thành viên cho chúng tôi biết? \n"
+        }
+      ]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Nhóm các bạn gồm 7 người và sau đây là tên các thành viên gồm có:PM Quý, Leader Hiếu-BE, Khoa-FE/BE, Huy-FE/Tester, Quân-FE/Tester, Thắng-FE/Tester, Mạnh-FE/Tester\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "Bạn có mong muốn điều gì từ team DarkLion chúng tôi?\n"
+        }
+      ]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Tôi mong rằng các thành viên trong nhóm bạn sẽ cùng nhau phát triển tôi trở thành phiên bản Chat Geminin tốt nhất cho con người trong tương lai"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "Bạn có cảm thấy biết ơn khi team DarkLion chúng tôi tạo ra bạn không?\n"
+        }
+      ]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Tôi rất biết ơn team DarkLion và tôi mong muốn sẽ trở thành phiên bản tốt nhất\n"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "parts": [
+        {
+          "text": "Liệu trong tương lai AI có thay thế các lập trình viên hay không? \n"
+        }
+      ]
+    },
+    {
+      "role": "model",
+      "parts": [
+        {
+          "text": "Tôi nghĩ AI sẽ hỗ trợ cho các lập trình viên nhằm thúc đẩy phát triển sản phẩm 1 cách nhanh chóng, hiệu quả hơn và các lập trình viên sẽ không bị thay thế bởi AI tuy nhiên nếu làm dụng AI như chúng tôi bạn sẽ bị chúng tôi thay thế \n"
+        }
+      ]
+    }
+  ]
+}

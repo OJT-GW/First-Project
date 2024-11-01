@@ -1,145 +1,137 @@
+
+
 <!DOCTYPE html>
-<!-- Coding By Adnan | https://www.linkedin.com/in/adnanhaider21421525/ -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DarkLion</title>
-    <link rel="stylesheet" href="stylechat.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" /> -->
-    <link href="prism.css" rel="stylesheet" />
-
-
-
-
-    <!-- Google Fonts Link For Icons -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+    <title>DarkLion AI</title>
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/f/f0/Google_Bard_logo.svg"
+        type="image/x-icon">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai@latest/dist/index.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@google/generative-ai@latest/dist/index.umd.js"></script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-        }
-    </style>
-    <!-- <script src="server.js"></script> -->
-    <!-- <script type="importmap">
-    <!-- <script type="importmap">
-        {
-            "imports": {
-                "@google/generative-ai": "https://esm.run/@google/generative-ai",
-                "./getApiKey.js": "./getApiKey.js"
-                "@google/generative-ai": "https://esm.run/@google/generative-ai",
-                "./getApiKey.js": "./getApiKey.js"
-            }
-        }
-    </script>
-    
-   <script type="module">
-        import { getApiKey } from './getApiKey.js';
-
-        async function initializeGenerativeAI() {
-            const API_KEY = await getApiKey();
-            const { GoogleGenerativeAI } = window.GoogleGenerativeAI;
-            const genAI = new GoogleGenerativeAI(API_KEY);
-            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-            // Use the model as needed
-        }
-    
-   <script type="module">
-        import { getApiKey } from './getApiKey.js';
-
-        async function initializeGenerativeAI() {
-            const API_KEY = await getApiKey();
-            const { GoogleGenerativeAI } = window.GoogleGenerativeAI;
-            const genAI = new GoogleGenerativeAI(API_KEY);
-            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-            // Use the model as needed
-        }
-
-        initializeGenerativeAI();
-    </script>  -->
-    <script type="module" src="script.js" defer></script>
-    <!-- <script type="module" src="copyFunction.js" ></script> -->
-
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.css">
+        <link rel="stylesheet"
+        href="index.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+<link
+rel="stylesheet"
+href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+/>
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VCHJXFGB08"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VCHJXFGB08');
+</script>
+
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <img class="header-logo" src="./src/images/dark-lion-high-resolution-logo-grayscale-transparent.png"
-                alt="Logo" />
-        </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <button class="material-symbols-outlined btn-textual" id="btn-hide-sidebar">
+                    arrow_back_ios_new
+                </button>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Google_Bard_logo.svg" id="gemin-pro-logo">
+                <div id="title-div">
+                    <div id="darkLion-branding">DarkLion AI </div>
+                    <div id="gemini-pro-branding">powered by Gemini AI Google   </div>
+                </div>
+                <button class="badge" id="btn-whatsnew">
+                    <span id="badge-version"></span>
+                </button>
+            </div>
+            <div class="navbar">
+                <div class="navbar-tab">Chats</div>
+                <div class="navbar-tab">Personalities</div>
+                <div class="navbar-tab">Settings</div>
+                <div class="navbar-tab-highlight"></div>
+            </div>
+            <div id="sidebar-content">
+                <div class="sidebar-section">
+                    <div class="btn-array">
+                        <button id="btn-new-chat" class="pointer">
+                            <span class="material-symbols-outlined">add</span> <span>New Chat</span>
+                        </button>
+                        <button id="btn-reset-chat" class="pointer" >Clear All</button>
+                    </div>
 
-        <div class="new-chat">
-            <button id="new-chat-btn" class="material-symbols-outlined">add</button>
-            <span>New Chat</span>
-        </div>
 
-        <div class="chat-history">
-            <div class="chats">
-                <div class="chat-contents">
-                    <div class="chat-preview">
-                        <span class="chat-message">Hello, how can I help you?</span>
+                    <div id="chatHistorySection">
                     </div>
                 </div>
-            </div>
-            <div class="chats">
-                <div class="chat-contents">
-                    <div class="chat-preview">
-                        <span class="chat-message">I love my cat so much</span>
+
+                <div class="sidebar-section" id="personalitySection">
+
+                    <div id="personalitiesDiv"></div>
+                    <div class="btn-array" id="btn-array-personality-section">
+                        <button id="btn-add-personality" class="pointer">Add</button>
+                        <button id="btn-import-personality" class="pointer">Import</button>
+                        <button id="btn-clearall-personality" class="pointer">Clear All</button>
                     </div>
                 </div>
-            </div>
-            <!-- Character limit script for chat preview messages -->
-            <script>
-                const characterLimit = 15;
 
-                document.querySelectorAll('.chat-message').forEach(message => {
-                    if (message.textContent.length > characterLimit) {
-                        message.textContent = message.textContent.substring(0, characterLimit) + '...';
-                    }
-                });
-            </script>
+                <div class="sidebar-section" id="setting-container">
+                    <span>
+                        <h3>API Key</h3>
+                    </span>
+                    <input type="text" placeholder="Paste API key here" id="apiKeyInput" class="input-field"></input>
+                    <h3>Generation Settings</h3>
+                    <label for="selectedModel">Model</label>
+                    <select id="selectedModel" class="input-field">
+                        <option value="gemini-1.0-pro">Pro 1.0</option>
+                        <option value="gemini-1.5-flash" selected>Flash 1.5</option>
+                        <option value="gemini-1.5-pro">Pro 1.5</option>
+                        <option value="tunedModels/data-gemini-ai-31poq6tv7tug">DarkTune 0.1</option>
+                    </select>
+                    <label for="maxTokens">Max Output Tokens</label>
+                    <input type="number" id="maxTokens" class="input-field" min="1" max="4000" value="1000"></input>
+                    <label for="temperature">Clarity Level</label>
+                    <div class="btn-array">
+                        <input type="range" min="20" max="200" id="temperature" class="slider">
+                        <label id="label-temperature">0</label>
+                    </div>
+                <button class="logout pointer" >
+					<span class="material-symbols-outlined" >logout</span>
+				</button>
+                </div>
+            </div>
+
+
+            
         </div>
-        <div class="button-container">
-            <button class="logout">
-                <span class="material-symbols-outlined">logout</span>
-            </button>
-            <button class="profile">
-                <span class="material-symbols-outlined">account_circle</span>
-            </button>
+
+        <div id="mainContent">
+            <div class="header">
+                <button class="material-symbols-outlined btn-textual" id="btn-show-sidebar">
+                    menu
+                </button>
+            </div>
+            <div class="default-text"></div>
+            <div class="message-container">
+            </div>
+            
+            <div id="message-box">
+                <span contenteditable placeholder="Send a message" id="messageInput" class="input-field"></span>
+                <button id="voice-btn" class="btn-textual material-symbols-outlined"
+						>mic</button
+					>
+                <button type="submit" class="btn-textual material-symbols-outlined" id="btn-send">send</button>
+            </div>
         </div>
     </div>
 
-    <!-- Chat Container-->
-    <!-- index.html -->
-    <div id="chat-container" class="chat-container"></div>
+    
+    <script type="module" src="main.js"></script>
 
-    <!-- Typing Container -->
-    <div class="typing-container">
-        <div class="typing-content">
-            <div class="typing-textarea">
-                <textarea id="chat-input" placeholder="Enter a prompt here" required></textarea>
-                <span id="send-btn" class="material-symbols-outlined">send</span>
-            </div>
-            <div class="typing-controls">
-                <span id="voice-btn" class="material-symbols-outlined">mic</span>
-                <span id="theme-btn" class="material-symbols-outlined">light_mode</span>
-                <span id="delete-btn" class="material-symbols-outlined">delete</span>
-            </div>
-        </div>
-    </div>
-
-    <span id="open-sidebar" class="material-symbols-outlined">menu</span>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-    <script src="prism.js"></script>
 </body>
 
 </html>

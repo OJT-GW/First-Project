@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+			.auth-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+				background: radial-gradient(circle, #2C2F33, #1E1E28);
+				font-family: "Poppins", sans-serif;
+				overflow: hidden;
+				color: #FFFFFF;
+			}
+			._container {
+				text-align: center;
+				background: rgba(30, 30, 40, 0.85);
+				padding: 60px;
+				border-radius: 20px;
+				box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+				width: 400px;
+				position: relative;
+				overflow: hidden;
+				transition: transform 0.5s, box-shadow 0.5s;
+			}
+			._container:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 20px 40px rgba(142, 146, 255, 0.7);
+			}
+			h1 {
+				margin-bottom: 20px;
+				font-size: 32px;
+				font-weight: 600;
+				background: linear-gradient(90deg, #8F94FB, #4E54C8);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				letter-spacing: 1.5px;
+			}
+			.form-group {
+				margin-top: 30px;
+			}
+			.btn {
+				background: linear-gradient(90deg, #4E54C8, #8F94FB);
+				color: white;
+				border: none;
+				padding: 15px 30px;
+				font-size: 18px;
+				font-weight: 600;
+				cursor: pointer;
+				border-radius: 30px;
+				transition: all 0.4s ease;
+				position: relative;
+				overflow: hidden;
+			}
+			.btn::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 300%;
+				height: 100%;
+				background: rgba(255, 255, 255, 0.2);
+				transform: skewX(-45deg);
+				transition: left 0.5s;
+			}
+			.btn:hover::before {
+				left: 100%;
+			}
+			.btn:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 10px 25px rgba(142, 146, 255, 0.5);
+			}
+			.footer {
+				margin-top: 30px;
+				font-size: 14px;
+				color: #BBBBBB;
+				letter-spacing: 1px;
+				opacity: 0.9;
+				text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+			}
+			/* Glow Effect on Button */
+			.btn:active {
+				box-shadow: 0 0 15px #8F94FB, 0 0 30px #4E54C8;
+				transform: translateY(0);
+			}
+			.popup {
+				display: none;
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				background: linear-gradient(135deg, #4CAF50, #81C784);
+				color: white;
+				padding: 20px;
+				border-radius: 10px;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+				z-index: 1000;
+				animation: fadeIn 0.5s, fadeOut 0.5s 1.5s forwards;
+			}
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeOut {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
